@@ -493,6 +493,10 @@ section {
   color: var(--color-text-faint);
 }
 
+.hero__terminal .warn {
+  color: var(--color-accent-pink);
+}
+
 /* ========================================
    SCROLL ANIMATIONS
    ======================================== */
