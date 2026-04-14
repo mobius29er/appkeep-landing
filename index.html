@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AppKeep — Expo & React Native App Monitor</title>
+  <meta name="description" content="Real-time dependency monitoring, review tracking, revenue health, and LLM-powered analysis for your Expo & React Native apps. $9/mo flat.">
+  <meta property="og:title" content="AppKeep — Expo & React Native App Monitor">
+  <meta property="og:description" content="Stop guessing. Start shipping. Real-time dependency monitoring, review tracking, and LLM analysis for mobile apps.">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ==========================================
+       NAVIGATION
+       ========================================== -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="#" class="nav__logo" aria-label="AppKeep home">
+        <!-- Inline SVG Logo — shield + monitor -->
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect x="2" y="4" width="28" height="20" rx="2" stroke="currentColor" stroke-width="2.5"/>
+          <path d="M12 28h8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M16 24v4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M16 9l-5 3v4c0 2.5 2 4.5 5 6 3-1.5 5-3.5 5-6v-4l-5-3z" fill="var(--color-primary)" stroke="var(--color-primary)" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M13.5 15l2 2 3.5-3.5" stroke="var(--color-cta-text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="nav__logo-text">AppKeep</span>
+      </a>
+
+      <ul class="nav__links" role="list">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#security">Security</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          </svg>
+        </button>
+        <a href="#pricing" class="nav__cta">Get Started</a>
+        <button class="nav__menu-btn" aria-label="Open menu" data-menu-toggle>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <path d="M3 6h18M3 12h18M3 18h18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <a href="#features" data-mobile-link>Features</a>
+    <a href="#how-it-works" data-mobile-link>How It Works</a>
+    <a href="#pricing" data-mobile-link>Pricing</a>
+    <a href="#security" data-mobile-link>Security</a>
+    <a href="#pricing" class="mobile-menu__cta" data-mobile-link>Get Started — $9/mo</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ==========================================
+         HERO SECTION
+         ========================================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__grid-bg" aria-hidden="true"></div>
+      <div class="grain-overlay" aria-hidden="true"></div>
+      <div class="container hero__content">
+        <div class="hero__badge" aria-hidden="true">
+          <span>Monitoring Active</span>
+        </div>
+        <h1 id="hero-title" class="hero__title">
+          Stop Guessing.<span>Start Shipping.</span>
+        </h1>
+        <p class="hero__subtitle">
+          Real-time dependency monitoring, review tracking, and LLM analysis for your Expo&nbsp;&amp;&nbsp;React&nbsp;Native apps.
+        </p>
+        <div class="hero__actions">
+          <a href="#pricing" class="btn-primary">Get Started — $9/mo</a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+        <div class="hero__terminal" aria-label="Terminal example">
+          <code>
+            <span class="prompt">$</span> <span class="cmd">npx appkeep init</span><br>
+            <span class="comment"># Syncing 3 repos...</span><br>
+            <span class="prompt">✓</span> <span class="flag">my-app</span> — 47 deps tracked<br>
+            <span class="prompt">✓</span> <span class="flag">side-project</span> — 23 deps tracked<br>
+            <span class="prompt">✓</span> <span class="flag">client-app</span> — 61 deps tracked<br>
+            <span class="comment"># Health scores: </span><span class="flag">87</span> · <span class="flag">92</span> · <span class="flag">74</span>
+          </code>
+        </div>
+      </div>
+    </section>
+
+    <div class="stripe-accent" aria-hidden="true"></div>
+
+    <!-- ==========================================
+         PROBLEMS SECTION
+         ========================================== -->
+    <section class="problems" id="problems" aria-labelledby="problems-title">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-label">The Problem</p>
+          <h2 id="problems-title" class="section-title">You're flying blind.</h2>
+        </div>
+        <div class="problems__grid">
+          <div class="problem-card reveal">
+            <div class="problem-card__icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 38l28-28M38 38L10 10" stroke="var(--color-accent-pink)"/>
+                <rect x="6" y="6" width="36" height="36" rx="2"/>
+              </svg>
+            </div>
+            <div class="problem-card__terminal">
+              <code>WARN: lodash@4.17.15 → CVE-2021-23337</code><br>
+              <code>WARN: expo-camera@12.0.0 deprecated</code>
+            </div>
+            <h3 class="problem-card__title">Outdated deps ship vulnerabilities</h3>
+            <p class="problem-card__desc">
+              You find out about critical updates weeks late. By then, your users are exposed.
+            </p>
+            <p class="problem-card__solution">→ Dependency Radar catches it instantly</p>
+          </div>
+
+          <div class="problem-card reveal">
+            <div class="problem-card__icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M24 8c-11 0-20 16-20 16s9 16 20 16 20-16 20-16-9-16-20-16z"/>
+                <circle cx="24" cy="24" r="6"/>
+                <path d="M6 6l36 36" stroke="var(--color-accent-pink)"/>
+              </svg>
+            </div>
+            <div class="problem-card__terminal">
+              <code>★☆☆☆☆ "Crashes on launch since update"</code><br>
+              <code>★☆☆☆☆ "Please fix the login bug"</code>
+            </div>
+            <h3 class="problem-card__title">Bad reviews go unnoticed</h3>
+            <p class="problem-card__desc">
+              A 1-star review avalanche tanks your rating before you even notice. No alerts, no sentiment tracking.
+            </p>
+            <p class="problem-card__solution">→ Review Sentinel monitors in real-time</p>
+          </div>
+
+          <div class="problem-card reveal">
+            <div class="problem-card__icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 36l8-10 6 6 8-14 10 12"/>
+                <path d="M36 18v-6h6" stroke="var(--color-accent-pink)"/>
+                <rect x="6" y="6" width="36" height="36" rx="2"/>
+              </svg>
+            </div>
+            <div class="problem-card__terminal">
+              <code>MRR: $2,400 → $1,800 (-25%)</code><br>
+              <code>Churn: 4.2% → 7.8% ↑↑↑</code>
+            </div>
+            <h3 class="problem-card__title">Revenue churn kills silently</h3>
+            <p class="problem-card__desc">
+              Subscription revenue erodes over weeks. By the time you check RevenueCat, the damage is done.
+            </p>
+            <p class="problem-card__solution">→ Revenue Pulse tracks it daily</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         FEATURES SECTION
+         ========================================== -->
+    <section class="features" id="features" aria-labelledby="features-title">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-label">What You Get</p>
+          <h2 id="features-title" class="section-title">Six tools. One dashboard.</h2>
+        </div>
+        <div class="features__grid">
+          <!-- Feature 1: Dependency Radar -->
+          <div class="feature-card reveal">
+            <span class="feature-card__number" aria-hidden="true">01</span>
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="20" cy="20" r="16"/>
+                <circle cx="20" cy="20" r="10"/>
+                <circle cx="20" cy="20" r="4"/>
+                <path d="M20 4v6M20 30v6M4 20h6M30 20h6" stroke="var(--color-primary)" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Dependency Radar</h3>
+            <p class="feature-card__desc">
+              Live monitoring of your package.json across all repos. Know the moment a dependency goes stale, deprecated, or flagged.
+            </p>
+            <span class="feature-card__tag">Real-time sync</span>
+          </div>
+
+          <!-- Feature 2: Review Sentinel -->
+          <div class="feature-card reveal">
+            <span class="feature-card__number" aria-hidden="true">02</span>
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 4l4.5 9 10 1.5-7.25 7 1.75 10L20 27l-9 4.5 1.75-10L5.5 14.5l10-1.5z" stroke="var(--color-primary)"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Review Sentinel</h3>
+            <p class="feature-card__desc">
+              Apple App Store + Google Play reviews with sentiment scoring. Catch negative trends before they tank your rating.
+            </p>
+            <span class="feature-card__tag">Sentiment analysis</span>
+          </div>
+
+          <!-- Feature 3: Revenue Pulse -->
+          <div class="feature-card reveal">
+            <span class="feature-card__number" aria-hidden="true">03</span>
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 32l8-10 6 4 8-16 10 10" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="36" cy="20" r="2" fill="var(--color-primary)"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Revenue Pulse</h3>
+            <p class="feature-card__desc">
+              RevenueCat integration tracks MRR, churn rate, and trial conversions. Daily health check on your revenue.
+            </p>
+            <span class="feature-card__tag">RevenueCat</span>
+          </div>
+
+          <!-- Feature 4: LLM Brain -->
+          <div class="feature-card reveal">
+            <span class="feature-card__number" aria-hidden="true">04</span>
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="8" y="8" width="24" height="24" rx="3"/>
+                <circle cx="16" cy="18" r="2" fill="var(--color-primary)"/>
+                <circle cx="24" cy="18" r="2" fill="var(--color-primary)"/>
+                <path d="M15 26c1.5 2 3.5 3 5 3s3.5-1 5-3" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M20 4v4M20 32v4M4 20h4M32 20h4" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">LLM Brain</h3>
+            <p class="feature-card__desc">
+              AI analysis powered by YOUR keys. Supports OpenAI, Claude, Gemini, Grok, Perplexity, and any local/custom endpoint.
+            </p>
+            <span class="feature-card__tag">BYOK — 6 providers</span>
+          </div>
+
+          <!-- Feature 5: Health Score -->
+          <div class="feature-card reveal">
+            <span class="feature-card__number" aria-hidden="true">05</span>
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="20" cy="20" r="16"/>
+                <path d="M14 20l4 4 8-8" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Health Score</h3>
+            <p class="feature-card__desc">
+              Dynamic 0-100 score per app, factoring dependency freshness, review sentiment, and revenue churn. One number, full picture.
+            </p>
+            <span class="feature-card__tag">0–100 composite</span>
+          </div>
+
+          <!-- Feature 6: GitHub Sync -->
+          <div class="feature-card reveal">
+            <span class="feature-card__number" aria-hidden="true">06</span>
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 4C11.16 4 4 11.16 4 20c0 7.08 4.58 13.06 10.94 15.18.8.14 1.1-.34 1.1-.76v-2.98c-4.02.58-5.06-.98-5.38-1.88-.18-.46-.96-1.88-1.64-2.26-.56-.3-1.36-1.04-.02-1.06 1.26-.02 2.16 1.16 2.46 1.64 1.44 2.42 3.74 1.74 4.66 1.32.14-1.04.56-1.74 1.02-2.14-3.56-.4-7.28-1.78-7.28-7.9 0-1.74.62-3.18 1.64-4.3-.16-.4-.72-2.04.16-4.24 0 0 1.34-.42 4.4 1.64 1.28-.36 2.64-.54 4-.54s2.72.18 4 .54c3.06-2.08 4.4-1.64 4.4-1.64.88 2.2.32 3.84.16 4.24 1.02 1.12 1.64 2.54 1.64 4.3 0 6.14-3.74 7.5-7.3 7.9.58.5 1.08 1.46 1.08 2.96v4.4c0 .42.28.92 1.1.76C31.42 33.06 36 27.06 36 20c0-8.84-7.16-16-16-16z" fill="currentColor" stroke="none"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">GitHub Sync</h3>
+            <p class="feature-card__desc">
+              OAuth connect in seconds. Real-time repo monitoring with minimum-necessary scopes. Your code never leaves GitHub.
+            </p>
+            <span class="feature-card__tag">OAuth integration</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="stripe-accent" aria-hidden="true"></div>
+
+    <!-- ==========================================
+         HOW IT WORKS SECTION
+         ========================================== -->
+    <section class="how-it-works" id="how-it-works" aria-labelledby="how-title">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-label">How It Works</p>
+          <h2 id="how-title" class="section-title">Three steps. Zero friction.</h2>
+        </div>
+        <div class="steps">
+          <div class="step reveal">
+            <div class="step__number">01</div>
+            <h3 class="step__title">Connect GitHub</h3>
+            <p class="step__desc">
+              One-click OAuth. We sync your repo metadata — package.json, lockfiles, app configs. No code access needed.
+            </p>
+            <div class="step__code">
+              <code>
+                <span class="highlight">→</span> Sign in with GitHub<br>
+                <span class="highlight">→</span> Select repositories<br>
+                <span class="highlight">✓</span> 3 repos synced
+              </code>
+            </div>
+          </div>
+
+          <div class="step reveal">
+            <div class="step__number">02</div>
+            <h3 class="step__title">Add Your LLM Key</h3>
+            <p class="step__desc">
+              Bring your own API key from any of 6 providers. Encrypted at rest with AES-256-GCM. You stay in control.
+            </p>
+            <div class="step__code">
+              <code>
+                <span class="highlight">provider:</span> anthropic<br>
+                <span class="highlight">key:</span> sk-ant-•••••••••••<br>
+                <span class="highlight">status:</span> verified ✓
+              </code>
+            </div>
+          </div>
+
+          <div class="step reveal">
+            <div class="step__number">03</div>
+            <h3 class="step__title">Monitor Everything</h3>
+            <p class="step__desc">
+              Dependencies, reviews, revenue — all in one dashboard. Health scores update daily. LLM analysis on demand.
+            </p>
+            <div class="step__code">
+              <code>
+                <span class="highlight">my-app</span> — score: 87 ●<br>
+                <span class="highlight">side-project</span> — score: 92 ●<br>
+                <span class="highlight">client-app</span> — score: 74 ▲
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         PRICING SECTION
+         ========================================== -->
+    <section class="pricing" id="pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-label">Pricing</p>
+          <h2 id="pricing-title" class="section-title">One plan. Everything included.</h2>
+        </div>
+        <div class="pricing__card reveal">
+          <span class="pricing__badge">All Access</span>
+          <div class="pricing__amount">$9<span>/mo</span></div>
+          <p class="pricing__tagline">Unlimited apps. Unlimited repos. Bring your own LLM key.</p>
+          <ul class="pricing__features" role="list">
+            <li>Real-time dependency monitoring</li>
+            <li>App Store + Google Play review tracking</li>
+            <li>Revenue health via RevenueCat</li>
+            <li>LLM-powered analysis (BYOK — 6 providers)</li>
+            <li>Dynamic health score per app</li>
+            <li>GitHub OAuth sync — unlimited repos</li>
+            <li>AES-256-GCM encryption at rest</li>
+            <li>Priority support via GitHub Issues</li>
+          </ul>
+          <a href="#" class="pricing__cta">Start Monitoring</a>
+        </div>
+        <p class="pricing__note reveal">
+          <strong>Free for open source maintainers.</strong> Reach out — we'll set you up.
+        </p>
+      </div>
+    </section>
+
+    <div class="stripe-accent" aria-hidden="true"></div>
+
+    <!-- ==========================================
+         SECURITY SECTION
+         ========================================== -->
+    <section class="security" id="security" aria-labelledby="security-title">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-label">Security</p>
+          <h2 id="security-title" class="section-title">Your data. Your keys. Our paranoia.</h2>
+        </div>
+        <div class="security__grid">
+          <div class="security-item reveal">
+            <div class="security-item__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="6" y="14" width="20" height="14" rx="2"/>
+                <path d="M10 14v-4a6 6 0 0112 0v4"/>
+                <circle cx="16" cy="22" r="2" fill="var(--color-accent-green)"/>
+              </svg>
+            </div>
+            <div>
+              <p class="security-item__title">AES-256-GCM Encryption</p>
+              <p class="security-item__desc">All sensitive data — API keys, tokens, credentials — encrypted at rest with AES-256-GCM. Industry standard.</p>
+            </div>
+          </div>
+
+          <div class="security-item reveal">
+            <div class="security-item__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 8h16v20H8z"/>
+                <path d="M12 4h8"/>
+                <path d="M12 16h8M12 20h5"/>
+                <path d="M21 12l-3 3-2-2" stroke="var(--color-accent-green)"/>
+              </svg>
+            </div>
+            <div>
+              <p class="security-item__title">Metadata Only</p>
+              <p class="security-item__desc">We never store your code. Only package manifests, lockfile hashes, and app metadata. Your source stays on GitHub.</p>
+            </div>
+          </div>
+
+          <div class="security-item reveal">
+            <div class="security-item__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 4l-10 6v8c0 6 4.5 11 10 14 5.5-3 10-8 10-14v-8l-10-6z"/>
+                <path d="M12 17l3 3 5-6" stroke="var(--color-accent-green)" stroke-width="2.5"/>
+              </svg>
+            </div>
+            <div>
+              <p class="security-item__title">Minimum Scopes</p>
+              <p class="security-item__desc">GitHub OAuth requests only the scopes we need. Read-only repo access. No write permissions. No org data.</p>
+            </div>
+          </div>
+
+          <div class="security-item reveal">
+            <div class="security-item__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="8" width="24" height="16" rx="2"/>
+                <path d="M4 14h24"/>
+                <path d="M10 20h4" stroke="var(--color-accent-green)"/>
+                <path d="M18 20h2"/>
+              </svg>
+            </div>
+            <div>
+              <p class="security-item__title">BYOK Architecture</p>
+              <p class="security-item__desc">Your LLM API keys are encrypted end-to-end. They never transit our servers unencrypted. You own the provider relationship.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="#" class="footer__logo" aria-label="AppKeep home">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <rect x="2" y="4" width="28" height="20" rx="2" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M12 28h8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M16 24v4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M16 9l-5 3v4c0 2.5 2 4.5 5 6 3-1.5 5-3.5 5-6v-4l-5-3z" fill="var(--color-primary)" stroke="var(--color-primary)" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M13.5 15l2 2 3.5-3.5" stroke="var(--color-cta-text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="footer__logo-text">AppKeep</span>
+          </a>
+          <p class="footer__tagline">"Built for indie devs who ship."</p>
+        </div>
+        <nav class="footer__links" aria-label="Footer navigation">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="#" target="_blank" rel="noopener noreferrer">Documentation</a>
+          <a href="#security">Security Policy</a>
+          <a href="mailto:hello@appkeep.dev">Contact</a>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2025 AppKeep. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
