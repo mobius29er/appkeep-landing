@@ -508,6 +508,34 @@ section {
   clip-path: inset(0 0 0 0);
 }
 
+/* Stagger children in grids */
+.problems__grid .reveal:nth-child(2),
+.features__grid .reveal:nth-child(2),
+.steps .reveal:nth-child(2),
+.security__grid .reveal:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.problems__grid .reveal:nth-child(3),
+.features__grid .reveal:nth-child(3),
+.steps .reveal:nth-child(3),
+.security__grid .reveal:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.features__grid .reveal:nth-child(4),
+.security__grid .reveal:nth-child(4) {
+  transition-delay: 0.15s;
+}
+
+.features__grid .reveal:nth-child(5) {
+  transition-delay: 0.2s;
+}
+
+.features__grid .reveal:nth-child(6) {
+  transition-delay: 0.25s;
+}
+
 /* ========================================
    PROBLEMS SECTION
    ======================================== */
@@ -760,16 +788,22 @@ section {
 
 /* Arrow connectors on desktop */
 @media (min-width: 768px) {
+  .steps {
+    position: relative;
+  }
+  .step {
+    overflow: visible;
+  }
   .step:not(:last-child)::after {
     content: '→';
     position: absolute;
-    right: calc(var(--space-6) * -1 - 0.5rem);
+    right: calc(-1 * var(--space-4) - 0.35rem);
     top: 50%;
     transform: translateY(-50%);
     font-family: var(--font-display);
     font-size: var(--text-xl);
     color: var(--color-primary);
-    z-index: 1;
+    z-index: 2;
   }
   [data-theme='light'] .step:not(:last-child)::after {
     color: var(--color-dark);
